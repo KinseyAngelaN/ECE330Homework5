@@ -1,0 +1,8 @@
+Data items in original order (integer array)
+   2   6   4   8  10  12  89  68  45  37
+Data items in ascending order (integer array)
+   2   4   6   8  10  12  37  45  68  89
+Data items in original order (float array)
+52.29 30.721 61.96 29.2 19.44 96.19 57.35 94.43 86.24 88.72
+Data items in ascending order (float array)
+19.44 29.2 30.721 52.29 57.35 61.96 86.24 88.72 94.43 96.19
