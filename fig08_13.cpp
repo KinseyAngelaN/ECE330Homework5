@@ -4,32 +4,50 @@
 #include <iostream> 
 #include <iomanip>
 using namespace std;
-
+template <class T>
 void selectionSort( int * const, const int ); // prototype
+template <class T>
 void swap( int * const, int * const ); // prototype
 
 int main()
 {
    const int arraySize = 10;
-   int a[ arraySize ] = { 2, 6, 4, 8, 10, 12, 89, 68, 45, 37 };
+   const int a[ arraySize ] = { 2, 6, 4, 8, 10, 12, 89, 68, 45, 37 };
+   const float b[arraySize] = {52.29, 30.721, 61.96, 29.2, 19.44, 96.19, 57.35, 94.43, 86.24, 88.72};
 
-   cout << "Data items in original order\n";
+   cout << "Data items in original order (integer array)\n";
 
    for ( int i = 0; i < arraySize; ++i )
       cout << setw( 4 ) << a[ i ];
 
-   selectionSort( a, arraySize ); // sort the array
+   selectionSort(a, arraySize); // sort the array
 
-   cout << "\nData items in ascending order\n";
+   cout << "\nData items in ascending order (integer array)\n";
 
    for ( int j = 0; j < arraySize; ++j )
       cout << setw( 4 ) << a[ j ];
 
    cout << endl;
+
+   cout << "Data items in original order (float array)\n";
+
+   for ( int i = 0; i < arraySize; ++i )
+      cout << setw( 4 ) << b[ i ];
+
+   selectionSort(b, arraySize); // sort the array
+
+   cout << "\nData items in ascending order (float array)\n";
+
+   for ( int j = 0; j < arraySize; ++j )
+      cout << setw( 4 ) << b[ j ];
+
+   cout << endl;
 } // end main
 
 // function to sort an array
-void selectionSort( int * const array, const int size )
+
+template <class T>
+void selectionSort( T * const array, const int size )
 {
    int smallest; // index of smallest element
 
@@ -50,24 +68,11 @@ void selectionSort( int * const array, const int size )
 
 // swap values at memory locations to which
 // element1Ptr and element2Ptr point
-void swap( int * const element1Ptr, int * const element2Ptr )
+template <class T>
+void swap( T * const element1Ptr, T * const element2Ptr )
 {
-   int hold = *element1Ptr;
+   T hold = *element1Ptr;
    *element1Ptr = *element2Ptr;
    *element2Ptr = hold;
 } // end function swap
 
-/**************************************************************************
- * (C) Copyright 1992-2012 by Deitel & Associates, Inc. and               *
- * Pearson Education, Inc. All Rights Reserved.                           *
- *                                                                        *
- * DISCLAIMER: The authors and publisher of this book have used their     *
- * best efforts in preparing the book. These efforts include the          *
- * development, research, and testing of the theories and programs        *
- * to determine their effectiveness. The authors and publisher make       *
- * no warranty of any kind, expressed or implied, with regard to these    *
- * programs or to the documentation contained in these books. The authors *
- * and publisher shall not be liable in any event for incidental or       *
- * consequential damages in connection with, or arising out of, the       *
- * furnishing, performance, or use of these programs.                     *
- **************************************************************************/
