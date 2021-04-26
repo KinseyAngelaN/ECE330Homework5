@@ -5,15 +5,15 @@
 #include <iomanip>
 using namespace std;
 template <class T>
-void selectionSort( int * const, const int ); // prototype
+void selectionSort( T * const, const int ); // prototype
 template <class T>
-void swap( int * const, int * const ); // prototype
+void swap( T * const, T* const ); // prototype
 
 int main()
 {
    const int arraySize = 10;
-   const int a[ arraySize ] = { 2, 6, 4, 8, 10, 12, 89, 68, 45, 37 };
-   const float b[arraySize] = {52.29, 30.721, 61.96, 29.2, 19.44, 96.19, 57.35, 94.43, 86.24, 88.72};
+   int a[ arraySize ] = { 2, 6, 4, 8, 10, 12, 89, 68, 45, 37 };
+   float b[arraySize] = {52.29, 30.721, 61.96, 29.2, 19.44, 96.19, 57.35, 94.43, 86.24, 88.72};
 
    cout << "Data items in original order (integer array)\n";
 
@@ -32,14 +32,14 @@ int main()
    cout << "Data items in original order (float array)\n";
 
    for ( int i = 0; i < arraySize; ++i )
-      cout << setw( 4 ) << b[ i ];
+      cout << b[ i ] << " ";
 
    selectionSort(b, arraySize); // sort the array
 
    cout << "\nData items in ascending order (float array)\n";
 
    for ( int j = 0; j < arraySize; ++j )
-      cout << setw( 4 ) << b[ j ];
+      cout << b[ j ] << " ";
 
    cout << endl;
 } // end main
